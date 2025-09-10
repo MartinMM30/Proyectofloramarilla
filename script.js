@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
             
             const song = new Audio(songUrl);
-            song.volume = 0.3; // <-- ¡Aquí se ajusta el volumen!
+            song.volume = 0.1;
             song.play();
         });
     }
