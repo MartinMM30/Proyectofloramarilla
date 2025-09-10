@@ -9,9 +9,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const roseImageUrl = 'https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExN2VkbGR2dmxycmZkM3V2MnN5Y29zY2Z3cmpzM21mMXAxOWkyZXAwNSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/BKqOqscntEIrm/giphy.gif'; 
     const giftBoxImageUrl = 'https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExbDVpNWlnaDY3dXRhcHhhaHp0ZDJ2Y3JiYXpxMWlicDVvcTFsdzJ6OCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/vYUWWJty4qIdW/giphy.gif'; 
-    const songUrl = "Sparkle ｜ Your Name AMV.mp3";
+    const songUrl = 'Sparkle ｜ Your Name AMV.mp3';
 
-   
+    
     if (yellowRose) yellowRose.src = roseImageUrl;
     if (giftBox) giftBox.src = giftBoxImageUrl;
     
@@ -38,6 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
             
             const song = new Audio(songUrl);
+            song.volume = 0.3; // <-- ¡Aquí se ajusta el volumen!
             song.play();
         });
     }
