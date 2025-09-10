@@ -7,15 +7,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const yellowRose = document.getElementById('yellow-rose');
     const giftBox = document.getElementById('gift-box');                 
 
-    // URLs de tus imágenes/GIFs y de la canción
     const roseImageUrl = 'https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExN2VkbGR2dmxycmZkM3V2MnN5Y29zY2Z3cmpzM21mMXAxOWkyZXAwNSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/BKqOqscntEIrm/giphy.gif'; 
     const giftBoxImageUrl = 'https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExbDVpNWlnaDY3dXRhcHhhaHp0ZDJ2Y3JiYXpxMWlicDVvcTFsdzJ6OCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/vYUWWJty4qIdW/giphy.gif'; 
-    const songUrl = 'URL_DE_LA_CANCION.mp3';
+    const songUrl = "Sparkle ｜ Your Name AMV.mp3";
 
-    // ➡️ ¡Aquí está la parte que falta! Asignar las URLs a los elementos
+   
     if (yellowRose) yellowRose.src = roseImageUrl;
     if (giftBox) giftBox.src = giftBoxImageUrl;
-    // ⬅️ Fin de la parte faltante
+    
 
     if (giftButton) {
         giftButton.addEventListener('click', () => {
