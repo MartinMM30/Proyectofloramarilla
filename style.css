@@ -1,0 +1,96 @@
+body {
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f7f7e8;
+    color: #333;
+    text-align: center;
+}
+
+.container {
+    padding: 2em;
+    border-radius: 15px;
+    background-color: #fff;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 2s ease-in-out;
+}
+
+h1 {
+    color: #ffcc00; 
+}
+
+.rose-container {
+    margin: 20px 0;
+}
+
+#yellow-rose {
+    width: 200px;
+    height: auto;
+    cursor: pointer;
+    transition: transform 0.5s ease-in-out;
+}
+
+#yellow-rose:hover {
+    transform: scale(1.1) rotate(10deg);
+}
+
+#gift-button {
+    background-color: #ffcc00;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 25px;
+    transition: background-color 0.3s ease;
+}
+
+#gift-button:hover {
+    background-color: #e6b800;
+}
+
+.hidden {
+    display: none;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.gift-box-container {
+    margin: 20px 0;
+}
+
+#gift-box {
+    width: 250px; 
+    height: auto;
+    cursor: pointer; 
+    transition: transform 0.5s ease-in-out;
+}
+
+#gift-box:hover {
+    transform: scale(1.05); 
+}
+
+.hidden {
+    display: none;
+}
+
+#yellow-rose {
+    width: 200px;
+    height: auto;
+    cursor: pointer;
+    transition: transform 0.5s ease-in-out;
+}
+
+#yellow-rose:hover {
+    transform: scale(1.1) rotate(10deg);
+}
