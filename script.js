@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Definiciones de elementos del DOM
     const giftButton = document.getElementById('gift-button');
     const message = document.getElementById('message');
     const giftBoxContainer = document.getElementById('gift-box-container'); 
@@ -7,18 +6,20 @@ document.addEventListener('DOMContentLoaded', () => {
     const yellowRose = document.getElementById('yellow-rose');
     const giftBox = document.getElementById('gift-box');                 
 
-    const roseImageUrl = 'https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExN2VkbGR2dmxycmZkM3V2MnN5Y29zY2Z3cmpzM21mMXAxOWkyZXAwNSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/BKqOqscntEIrm/giphy.gif'; 
-    const giftBoxImageUrl = 'https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExbDVpNWlnaDY3dXRhcHhhaHp0ZDJ2Y3JiYXpxMWlicDVvcTFsdzJ6OCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/vYUWWJty4qIdW/giphy.gif'; 
+    const roseImageUrl = 'Loop Flower GIF.gif'; 
+    const giftBoxImageUrl = 'gift.gif'; 
     const songUrl = 'Sparkle ｜ Your Name AMV.mp3';
 
-    
+    const sparklesContainer = document.getElementById('sparkles');
+
+    const mainContainer = document.querySelector('.container'); 
+
     if (yellowRose) yellowRose.src = roseImageUrl;
     if (giftBox) giftBox.src = giftBoxImageUrl;
     
 
     if (giftButton) {
         giftButton.addEventListener('click', () => {
-            
             if (giftBoxContainer) giftBoxContainer.classList.add('hidden');
             if (roseContainer) roseContainer.classList.remove('hidden');
             if (message) message.classList.remove('hidden');
@@ -36,9 +37,53 @@ document.addEventListener('DOMContentLoaded', () => {
                     yellowRose.style.transform = 'scale(1) rotate(0deg)';
                 }, 100);
             }
+                 if (sparklesContainer) {
+                
+                function createSparkle() {
+                    const sparkle = document.createElement('div');
+                    sparkle.classList.add('sparkle');
+                    
+                    const size = Math.random() * 5 + 2; 
+                    sparkle.style.width = `${size}px`;
+                    sparkle.style.height = `${size}px`;
+                    
+                    
+                    sparkle.style.left = `${Math.random() * 100}%`;
+                    sparkle.style.top = `${Math.random() * 100}%`;
+                    
+                    sparklesContainer.appendChild(sparkle);
+                    
+                    sparkle.addEventListener('animationend', () => sparkle.remove());
+                }
+                  setInterval(createSparkle, 100);
+            
+
+                for (let i = 0; i < 30; i++) {
+                    setTimeout(createSparkle, Math.random() * 500);
+                }
+            }
+
+            if (mainContainer) {
+        mainContainer.addEventListener('mousemove', (e) => {
+            
+            if (Math.random() > 0.95) { 
+                const shootingStar = document.createElement('div');
+                shootingStar.classList.add('shooting-star');
+                
+                
+                const containerRect = mainContainer.getBoundingClientRect();
+                shootingStar.style.left = `${e.clientX - containerRect.left}px`;
+                shootingStar.style.top = `${e.clientY - containerRect.top}px`;
+                
+                mainContainer.appendChild(shootingStar); 
+               
+                shootingStar.addEventListener('animationend', () => shootingStar.remove());
+            }
+        });
+    }
             
             const song = new Audio(songUrl);
-            song.volume = 0.1;
+            song.volume = 0.01;
             song.play();
         });
     }
