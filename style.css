@@ -62,16 +62,10 @@ h1 {
     cursor: pointer;
     z-index: 2; 
     transition: transform 0.5s ease-in-out;
-    
-    
     filter: drop-shadow(0 0 10px rgba(255, 255, 0, 0.8)) drop-shadow(0 0 20px rgba(255, 255, 0, 0.6));
     animation: pulse-glow 2s infinite alternate ease-in-out; 
-    
     position: relative; 
-
-    
     border-radius: 50%; 
-    
 }
 
 @keyframes pulse-glow {
@@ -108,16 +102,16 @@ h1 {
 .hidden {
     display: none;
 }
+
 .sparkles-full-container {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    pointer-events: none; /* Esto permite hacer clic en los elementos debajo */
-    z-index: 1; /* Los pone encima del contenido pero debajo de la rosa */
+    pointer-events: none;
+    z-index: 1;
 }
-
 
 .sparkle {
     position: absolute;
@@ -134,15 +128,6 @@ h1 {
     to { opacity: 1; }
 }
 
-@keyframes pulse-glow {
-    from {
-        filter: drop-shadow(0 0 10px rgba(255, 255, 0, 0.8));
-    }
-    to {
-        filter: drop-shadow(0 0 15px rgba(255, 255, 0, 1)) drop-shadow(0 0 25px rgba(255, 255, 0, 0.7));
-    }
-}
-
 @keyframes sparkle-fade-out {
     from {
         opacity: 1;
@@ -157,22 +142,22 @@ h1 {
 .shooting-star {
     position: absolute;
     background: linear-gradient(to right, rgba(255, 255, 0, 0) 0%, rgba(255, 255, 0, 0.8) 50%, rgba(255, 255, 0, 0) 100%);
-    border-radius: 50%; /* Hará que el punto brillante sea redondo */
-    width: 25px; /* Tamaño del brillo central */
-    height: 25px; /* Tamaño del brillo central */
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
     opacity: 0;
-    box-shadow: 0 0 15px 5px rgba(255, 255, 0, 0.8); /* Más brillo */
-    pointer-events: none; /* Ignora clics */
-    animation: shooting-star-effect 1.5s forwards ease-out; /* Animación más larga */
-    transform: scale(0); /* Empieza pequeño */
-    z-index: 10; /* Para que esté por encima de todo */
+    box-shadow: 0 0 15px 5px rgba(255, 255, 0, 0.8);
+    pointer-events: none;
+    animation: shooting-star-effect 1.5s forwards ease-out;
+    transform: scale(0);
+    z-index: 10;
 }
 
 @keyframes shooting-star-effect {
     0% {
         opacity: 0.8;
         transform: scale(0) translateX(0) translateY(0);
-        filter: hue-rotate(0deg); /* Color inicial */
+        filter: hue-rotate(0deg);
     }
     10% {
         opacity: 1;
@@ -180,7 +165,67 @@ h1 {
     }
     100% {
         opacity: 0;
-        transform: scale(0) translateX(100px) translateY(-100px); /* Se mueve y se desvanece */
-        filter: hue-rotate(360deg); /* Cambia de color sutilmente */
+        transform: scale(0) translateX(100px) translateY(-100px);
+        filter: hue-rotate(360deg);
     }
+}
+
+.mini-flower-container {
+    padding: 1em;
+    border-radius: 15px;
+    background-color: #fff;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 2s ease-in-out, pulse-glow 2s infinite alternate ease-in-out;
+    position: absolute;
+    z-index: 5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Efecto de brillo de la rosa */
+    filter: drop-shadow(0 0 10px rgba(255, 255, 0, 0.8)) drop-shadow(0 0 20px rgba(255, 255, 0, 0.6));
+    
+    /* ¡NUEVO! Tamaño fijo y ocultar el contenido sobrante */
+    width: 120px;
+    height: 120px;
+    overflow: hidden;
+}
+
+.mini-flower-container img {
+    /* ¡NUEVO! Ajustar la imagen para que llene el contenedor sin estirarse */
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Posiciones simétricas corregidas para un mejor balance visual */
+#mini-flower-1 {
+    top: 20%;
+    left: calc(50% - 450px);
+}
+
+#mini-flower-2 {
+    top: 20%;
+    right: calc(50% - 450px);
+}
+
+#mini-flower-3 {
+    bottom: 20%;
+    left: calc(50% - 450px);
+}
+
+#mini-flower-4 {
+    bottom: 20%;
+    right: calc(50% - 450px);
+}
+
+#mini-flower-5 {
+    top: 50%;
+    left: calc(50% - 550px);
+    transform: translateY(-50%);
+}
+
+#mini-flower-6 {
+    top: 50%;
+    right: calc(50% - 550px);
+    transform: translateY(-50%);
 }
