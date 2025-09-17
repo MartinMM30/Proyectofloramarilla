@@ -16,7 +16,7 @@ body {
 .container {
     padding: 2em;
     border-radius: 15px;
-    background-color: #fff;
+    background-color: rgba(255, 255, 255, 0.7); /* Blanco con 70% de opacidad */
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     animation: fadeIn 2s ease-in-out;
     display: flex;
@@ -25,7 +25,6 @@ body {
     text-align: center;
     position: relative;
 }
-
 h1 {
     color: #ffcc00; 
 }
@@ -227,4 +226,18 @@ h1 {
     top: 50%;
     right: calc(50% - 550px);
     transform: translateY(-50%);
+}
+
+#message {
+    /* Estilo del mensaje */
+    font-style: italic;
+    color: #4b0020; 
+    text-shadow: 0 0 5px #4b0020, 0 0 10px #4b0020; 
+}
+
+#sub-message {
+    color: #8b0000; 
+    font-style: italic;
+    text-shadow: 0 0 3px #8b0000; 
+    margin-top: -10px;
 }

@@ -39,9 +39,8 @@ document.addEventListener('DOMContentLoaded', () => {
         sparkle.addEventListener('animationend', () => sparkle.remove());
     }
 
-    // Función para crear estrellas fugaces
-    function createShootingStar(e) {
-        if (Math.random() > 0.95) {
+      function createShootingStar(e) {
+        if (Math.random() > 0.80) { // <-- ¡Ajuste importante aquí! (de 0.95 a 0.80)
             const shootingStar = document.createElement('div');
             shootingStar.classList.add('shooting-star');
             
@@ -54,17 +53,17 @@ document.addEventListener('DOMContentLoaded', () => {
             shootingStar.addEventListener('animationend', () => shootingStar.remove());
         }
     }
+     if (mainContainer) {
+        mainContainer.addEventListener('mousemove', createShootingStar);
+    }
+
     
     // Event listener del botón
-    if (giftButton) {
-        giftButton.addEventListener('click', () => {
+     if (giftBox) {
+        giftBox.addEventListener('click', () => {
             if (giftBoxContainer) giftBoxContainer.classList.add('hidden');
             if (roseContainer) roseContainer.classList.remove('hidden');
             if (message) message.classList.remove('hidden');
-
-            giftButton.disabled = true;
-            giftButton.style.backgroundColor = '#ccc';
-            giftButton.textContent = '¡Regalo abierto!';
 
             // Se crean y muestran los mini-contenedores al hacer clic
             miniFlowers.forEach(flower => {
