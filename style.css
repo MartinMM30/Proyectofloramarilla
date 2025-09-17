@@ -173,7 +173,7 @@ h1 {
 .mini-flower-container {
     padding: 1em;
     border-radius: 15px;
-    background-color: #fff;
+    background-color: transparent; /* Fondo transparente */
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     animation: fadeIn 2s ease-in-out, pulse-glow 2s infinite alternate ease-in-out;
     position: absolute;
@@ -184,12 +184,11 @@ h1 {
     /* Efecto de brillo de la rosa */
     filter: drop-shadow(0 0 10px rgba(255, 255, 0, 0.8)) drop-shadow(0 0 20px rgba(255, 255, 0, 0.6));
     
-    /* ¡NUEVO! Tamaño fijo y ocultar el contenido sobrante */
+    /* Tamaño fijo y ocultar el contenido sobrante */
     width: 120px;
     height: 120px;
     overflow: hidden;
 }
-
 .mini-flower-container img {
     /* ¡NUEVO! Ajustar la imagen para que llene el contenedor sin estirarse */
     width: 100%;
